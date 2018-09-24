@@ -7,11 +7,11 @@ import (
 	"github.com/lexkong/log"
 	"github.com/spf13/viper"
 	"net/http"
+	"time"
 	"tourism_erp/config"
 	"tourism_erp/model"
 	"tourism_erp/routing"
 	"tourism_erp/util"
-	"time"
 )
 
 func init() {
@@ -21,6 +21,8 @@ func init() {
 	model.Init()
 }
 func main() {
+	//var Enforcer = casbin.NewEnforcer("rbac_model.conf", "rbac_policy.csv")
+
 	app := iris.Default()
 	app.OnAnyErrorCode(func(c iris.Context) {
 		ctx := util.ApiContext{c}

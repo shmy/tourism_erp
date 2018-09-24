@@ -1,5 +1,5 @@
-hash: ae20024e069de6fcc43d69e82035ce5cb4d87fd41c770ac0302ff3e1c1f9badc
-updated: 2018-09-24T15:17:33.646862+08:00
+hash: 04517feaac8eac87ab6b13aceb33a6e59a40b6f0521c87dac6927612a10dec02
+updated: 2018-09-24T20:22:05.878152+08:00
 imports:
 - name: github.com/aymerick/raymond
   version: b565731e1464263de0bda75f2e45d97b54b60110
@@ -9,6 +9,19 @@ imports:
   - parser
 - name: github.com/BurntSushi/toml
   version: 3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005
+- name: github.com/casbin/casbin
+  version: 695c374a6617e9cdc930e8666307a772577cbd70
+  subpackages:
+  - config
+  - effect
+  - model
+  - persist
+  - persist/file-adapter
+  - rbac
+  - rbac/default-role-manager
+  - util
+- name: github.com/casbin/gorm-adapter
+  version: e56c6daebd5e8c657caf3bdf3a647803cf7b242d
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
 - name: github.com/eknkc/amber
@@ -103,11 +116,17 @@ imports:
   - gzip
 - name: github.com/klauspost/cpuid
   version: e7e905edc00ea8827e58662220139109efea09db
+- name: github.com/Knetic/govaluate
+  version: 9aa49832a739dcd78a5542ff189fb82c3e423116
 - name: github.com/lexkong/log
   version: 972f9cd951fc7e5c8797f1fb2b57b63b09ff4de9
   subpackages:
   - lager
   - lager/color
+- name: github.com/lib/pq
+  version: 4ded0e9383f75c197b3a2aaa6d590ac52df6fd79
+  subpackages:
+  - oid
 - name: github.com/magiconair/properties
   version: c2353362d570a7bfa228149c62842019201cfb71
 - name: github.com/mattn/go-colorable
@@ -126,6 +145,8 @@ imports:
   version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
 - name: github.com/pelletier/go-toml
   version: c2dbbc24a97911339e01bda0b8cabdbd8f13b602
+- name: github.com/pkg/errors
+  version: c059e472caf75dbe73903f6521a20abac245b17f
 - name: github.com/ryanuber/columnize
   version: abc90934186a77966e2beeac62ed966aac0561d5
 - name: github.com/shirou/gopsutil

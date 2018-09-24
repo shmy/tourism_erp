@@ -4,7 +4,9 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/kataras/iris"
 	"github.com/spf13/viper"
+	"tourism_erp/config"
 	peopleHandler "tourism_erp/handler/people"
+	cm "tourism_erp/middleware/casbin"
 	jwtMiddleware "tourism_erp/middleware/jwt"
 	"tourism_erp/middleware/permissions"
 	"tourism_erp/routing/admin/department"
@@ -30,11 +32,15 @@ func GetRouting(group iris.Party) {
 			})
 		},
 	})
+	casbinMiddleware := cm.New(config.GetEnforcer())
+
 	group.Post("/sign_in", util.ApiHandlerWrap(peopleHandler.SignIn))
 	// Token 有效验证
 	group.Use(jwtHandler.Serve)
 	// Token 持久化和权限验证
 	group.Use(permissions.Serve(1))
+	// casbin 中间件
+	group.Use(casbinMiddleware.ServeHTTP)
 	organization.GetRouting(group)
 	department.GetRouting(group)
 	people.GetRouting(group)
