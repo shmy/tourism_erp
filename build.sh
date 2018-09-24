@@ -1,4 +1,4 @@
-SERVER_NAME="api-server"
+SERVER_NAME="tourism-erp-server"
 # 打包
 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o bin/darwin/$SERVER_NAME -v -ldflags "-s -w" main.go
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/linux/$SERVER_NAME -v -ldflags "-s -w" main.go
